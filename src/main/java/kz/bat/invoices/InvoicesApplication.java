@@ -8,6 +8,8 @@ public class InvoicesApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(InvoicesApplication.class, args);
+		
+		System.out.println("Hello world!");
 	}
-
+	
 }
