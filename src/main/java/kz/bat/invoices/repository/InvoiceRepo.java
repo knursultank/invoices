@@ -3,9 +3,9 @@ package kz.bat.invoices.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import kz.bat.invoices.entity.Files;
+import kz.bat.invoices.entity.Invoices;
 
 @Repository
-public interface FileRepo extends JpaRepository<Files, Long> {
+public interface InvoiceRepo extends JpaRepository<Invoices, Long> {
 
 }
