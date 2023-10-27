@@ -11,18 +11,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "code")
-public class Codes {
-	
+@Entity
+@Table(name = "invoice_file")
+@Data
+public class InvoiceFile {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
 	private Long id;
 	
-	@Column(name = "code")
-	private String code;
+	@Column(name = "invoiceNumber")
+	private String invoiceNumber;
 }

@@ -1,13 +1,16 @@
 package kz.bat.invoices.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import kz.bat.invoices.entity.InvoiceFile;
+import kz.bat.invoices.entity.MarkingCode;
 
 @Repository
-public interface FileRepo extends JpaRepository<InvoiceFile, Long> {
+public interface MarkingCodeRepo extends JpaRepository<MarkingCode, Long> {
 	
-	InvoiceFile finbyInvoiceNumber(String invoiceNum);
+	List<InvoiceFile> findAllByCode(String code);
+	
 }
