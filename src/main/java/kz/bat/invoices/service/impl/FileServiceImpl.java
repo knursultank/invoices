@@ -14,19 +14,16 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class FileServiceImpl implements FileService {
-	
+public class FileServiceImpl {
 	private final FileRepo fileRepo;
 	private final MarkingCodeRepo markingCodeRepo;
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(FileService.class);
 	
-	@Override
 	public InvoiceFile getFileByInvoiceNumber(final String invoiceNumber) {
-		return this.fileRepo.finbyInvoiceNumber(invoiceNumber);
+		return this.fileRepo.findByInvoiceNumber(invoiceNumber);
 	}
 	
-	@Override
 	public List<InvoiceFile> getFilesByMarkingCode(final String mcode) {
 		return this.markingCodeRepo.findAllByCode(mcode);
 	}

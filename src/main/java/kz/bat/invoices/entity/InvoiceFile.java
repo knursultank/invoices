@@ -22,6 +22,8 @@ public class InvoiceFile {
 	@Column(name = "id", nullable = false)
 	private Long id;
 	
-	@Column(name = "invoiceNumber")
+	private Long invoice;
+	
+	@Column(name = "invoice_number")
 	private String invoiceNumber;
 }
