@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import kz.bat.invoices.entity.InvoiceFile;
+import kz.bat.invoices.entity.MarkingCode;
 import kz.bat.invoices.repository.FileRepo;
 import kz.bat.invoices.repository.MarkingCodeRepo;
 import kz.bat.invoices.service.FileService;
@@ -24,7 +25,11 @@ public class FileServiceImpl {
 		return this.fileRepo.findByInvoiceNumber(invoiceNumber);
 	}
 	
-	public List<InvoiceFile> getFilesByMarkingCode(final String mcode) {
+	public List<MarkingCode> getFilesByMarkingCode(final String mcode) {
 		return this.markingCodeRepo.findAllByCode(mcode);
+	}
+	
+	public List<MarkingCode> getFilesByInvoiceNumber(final String invoiceNumber) {
+		return this.markingCodeRepo.findAllByInvoiceNumber(invoiceNumber);
 	}
 }

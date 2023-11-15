@@ -15,13 +15,18 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "code")
+@Table(name = "marking_code")
 public class MarkingCode {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
 	private Long id;
+	
+	private Long invoice;
+	
+	@Column(name = "invoice_number")
+	private String invoiceNumber;
 	
 	@Column(name = "code")
 	private String code;

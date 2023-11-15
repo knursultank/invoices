@@ -11,6 +11,6 @@ import kz.bat.invoices.entity.MarkingCode;
 @Repository
 public interface MarkingCodeRepo extends JpaRepository<MarkingCode, Long> {
 	
-	List<InvoiceFile> findAllByCode(String code);
-	
+	List<MarkingCode> findAllByCode(String code);
+	List<MarkingCode> findAllByInvoiceNumber(String invoiceNumber);
 }
