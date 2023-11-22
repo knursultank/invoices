@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import kz.bat.invoices.dto.InvoiceDto;
 import kz.bat.invoices.entity.InvoiceFile;
 import kz.bat.invoices.entity.MarkingCode;
 import kz.bat.invoices.repository.FileRepo;
@@ -31,5 +32,10 @@ public class FileServiceImpl {
 	
 	public List<MarkingCode> getFilesByInvoiceNumber(final String invoiceNumber) {
 		return this.markingCodeRepo.findAllByInvoiceNumber(invoiceNumber);
+	}
+	
+	public InvoiceDto readAndSaveInvoice(String filePath) {
+		
+		return new InvoiceDto();
 	}
 }
